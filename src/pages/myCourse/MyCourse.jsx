@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { baseUrl } from "../../../config/config";
-import CourseCard from "./CourseCard";
+import CourseCard from "../Home/components/CourseCard";
+import { baseUrl } from "../../config/config";
 
-
-const Courses = () => {
+const MyCourse = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +10,7 @@ const Courses = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const response = await fetch(`${baseUrl}/course?email=naim@microdeft.com`);
+        const response = await fetch(`${baseUrl}/course?email=sadiqur057@gmail.com`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -35,8 +34,12 @@ const Courses = () => {
   }
 
   return (
-
+    <div className="course-container">
+      {
+        courses.map(course => <CourseCard key={course?.id} course={course} />)
+      }
+    </div>
   );
 };
 
-export default Courses;
+export default MyCourse;
