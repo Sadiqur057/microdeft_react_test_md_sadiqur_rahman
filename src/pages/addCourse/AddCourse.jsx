@@ -13,7 +13,19 @@ const AddCourse = () => {
     const formData = { title, description, badge_text, badge_color, instructor_name, email }
     console.log(formData)
 
-
+    try {
+      const response = await fetch(`${baseUrl}/course`, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      const result = await response.json()
+      console.log(result)
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <div>
