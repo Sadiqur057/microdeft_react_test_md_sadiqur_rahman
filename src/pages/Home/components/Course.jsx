@@ -35,7 +35,11 @@ const Courses = () => {
   }
 
   return (
-
+    <div className="course-container">
+      {
+        courses.map(course => <CourseCard key={course?.id} course={course} />)
+      }
+    </div>
   );
 };
 
