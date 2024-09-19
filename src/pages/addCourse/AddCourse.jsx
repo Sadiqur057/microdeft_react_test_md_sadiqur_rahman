@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { baseUrl } from "../../config/config";
 
 const AddCourse = () => {
@@ -23,6 +24,7 @@ const AddCourse = () => {
       })
       const result = await response.json()
       console.log(result)
+      toast.success("Successfully added course")
     } catch (error) {
       console.log(error)
     }

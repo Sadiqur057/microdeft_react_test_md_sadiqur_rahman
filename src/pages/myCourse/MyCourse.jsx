@@ -10,7 +10,7 @@ const MyCourse = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const response = await fetch(`${baseUrl}/course?email=sadiqur057@gmail.comi`);
+        const response = await fetch(`${baseUrl}/course?email=sadiqur057@gmail.com`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
